@@ -28,6 +28,15 @@ services:
     networks:
       - watchgroup
 
+  adminer:
+    image: adminer:latest
+    ports:
+      - "8081:8080"
+    networks:
+      - watchgroup
+    depends_on:
+      - db
+
 networks:
   watchgroup:
     driver: bridge
