@@ -1,8 +1,8 @@
-// Controllers/FacebookController.cs
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Data;
 using MyApp.Models;
 using MyApp.Services;
+using System.Threading.Tasks;
 
 namespace MyApp.Controllers
 {
@@ -41,6 +41,13 @@ namespace MyApp.Controllers
             }
 
             return Ok(posts);
+        }
+
+        [HttpGet("profile")]
+        public async Task<IActionResult> GetProfile()
+        {
+            var profile = await _facebookService.GetUserProfileAsync();
+            return Ok(profile);
         }
     }
 }

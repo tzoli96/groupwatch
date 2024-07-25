@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: .docker/Dockerfile
     ports:
-      - "8080:5181"
+      - "8080:80"
     volumes:
       - ./src:/app
     networks:
